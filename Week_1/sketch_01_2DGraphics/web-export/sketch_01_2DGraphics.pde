@@ -1,6 +1,5 @@
 /*
- * Creative Coding
- * Week 1, Foldout 04: Graphics Shapes and Drawing Order
+ * Foldout 01: Graphics Shapes and Drawing Order
  * by Indae Hwang and Jon McCormack
  * Copyright (c) 2014 Monash University
  
