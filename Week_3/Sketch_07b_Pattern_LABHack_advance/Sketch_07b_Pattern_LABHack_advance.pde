@@ -1,7 +1,12 @@
-
+/*
+ * This program extends the last, but uses the exact same variables.
+ * With the addition of a shifting RGB color range.
+ * 
+ */
 int x = 100;
 int y = 25;
 int mySize = 50;
+int repeats = 0;
 int myFill = 0;
 
 void setup() {
@@ -15,11 +20,13 @@ void draw() {
   stroke(0);
   strokeWeight(3);
   ellipseMode(CENTER);
+  
+  //mySize = mouseX+5;
+  repeats = width/mySize+1;
 
-  for (int i = 0; i < 11; i++) {
-    for (int j = 0; j < 11; j++) {
+  for (int i = 0; i < repeats; i++) {
+    for (int j = 0; j < repeats; j++) {
       
-    
      fill(myFill, 200, 220);
      ellipse(mySize/2+x, 0+y, mySize, mySize);
      
@@ -27,7 +34,7 @@ void draw() {
      ellipse(0+x, mySize/2+y, mySize, mySize);
      
      fill(255);
-     ellipse(0+x, mySize/2+y, 30, 30);
+     ellipse(0+x, mySize/2+y, mySize*0.6, mySize*0.6);
       x = x + mySize;
     }
  
@@ -38,12 +45,3 @@ void draw() {
   y = 0;
   myFill = 0;
 }
-
-
-/*ellipse(25,25,50,50);
- ellipse(75,25,50,50);
- ellipse(125,25,50,50);
- 
- ellipse(0,50,50,50);
- ellipse(50,50,50,50);
- ellipse(100,50,50,50);*/

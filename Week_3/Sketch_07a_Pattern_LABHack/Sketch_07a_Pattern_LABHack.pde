@@ -1,7 +1,14 @@
-
+/*
+ * This program fills the display window with overlapping circles.
+ * Incrementing each on the x and y axis based in the circle size.
+ * This makes it easy to change the pattern by the circle size.
+ * Which also changes the number of loops in 'repeats' variable.
+ * 
+ */
 int x = 0;
 int y = 25;
-int mySize = 50;
+int mySize = 90;
+int repeats = 0;
 
 void setup() {
   size(500, 500);
@@ -14,10 +21,11 @@ void draw() {
   stroke(0);
   strokeWeight(3);
   ellipseMode(CENTER);
+  
+  repeats = width/mySize+1;
 
-  for (int i = 0; i < 11; i++) {
-    
-    for (int j = 0; j < 11; j++) {
+  for (int i = 0; i < repeats; i++) { 
+    for (int j = 0; j < repeats; j++) {
      ellipse(mySize/2+x, 0+y, mySize, mySize);
      ellipse(0+x, mySize/2+y, mySize, mySize);
       x = x + mySize;

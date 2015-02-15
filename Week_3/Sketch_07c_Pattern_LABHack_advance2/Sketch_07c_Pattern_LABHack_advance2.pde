@@ -15,6 +15,7 @@ void draw() {
   
   noFill();
   rectMode(CENTER);
+  
 for (int i = 0; i < 14; i++){
 pushMatrix();
 translate(width/2, height/2);
@@ -29,7 +30,7 @@ strokeWeight(2);
 fill(0,200,255,30);
 for (int i = 0; i < 12; i++){
 pushMatrix();
-translate(width/4, height/4);
+translate(width/2, height/2);
 rotate(rAngle);  
 rect(-50, 0, mouseY, 30);  
 popMatrix();
