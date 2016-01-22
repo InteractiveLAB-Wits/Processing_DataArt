@@ -9,13 +9,13 @@ var locY = [];
 // Preload for data and image laoding
 function preload(){
 	getMapData(mapData);
-	img = loadImage("map.png");
+	//img = loadImage("map.png");
 }
 
 // standard setup
 function setup() {
   createCanvas(640, 400); 
-  image(img, 0,0);
+  //image(img, 0,0);
   textFont("Georgia");
   textAlign(CENTER, CENTER);
   noStroke();

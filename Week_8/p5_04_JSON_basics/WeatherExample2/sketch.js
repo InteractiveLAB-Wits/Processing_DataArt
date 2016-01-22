@@ -2,24 +2,29 @@
 var wind;
 // Circle position
 var position;
-// background transprency
-var humidity;
-// red value
-var temp;
+
 
 function setup() {
-  createCanvas(720, 400);
+  canvas= createCanvas(720, 200);
   // Request the data from openweathermap
-  loadJSON('http://api.openweathermap.org/data/2.5/weather?q=Johannesburg&units=metric', gotWeather);
+  loadJSON('http://api.openweathermap.org/data/2.5/weather?q=Lebowakgomo&units=metric', gotWeather);
+  //loadJSON('http://api.openweathermap.org/data/2.5/weather?q=Johannesburg&units=metric', gotWeather);
+
+  // tt, draws the information//
   // Circle starts in the middle
+
+  // vector two values as one value e.g Vector (x,y);//
   position = createVector(width/2, height/2);
   // wind starts as (0,0)
   wind = createVector();
+  //humidity = createVector();
+
 }
 
 function draw() {
-  background(255,255,255,humidity);
+  background (127, 0,0);
 
+ 
   // This section draws an arrow pointing in the direction of wind
   push();
   translate(32, height - 32);
@@ -28,45 +33,34 @@ function draw() {
   noStroke();
   fill(255);
   ellipse(0, 0, 48, 48);
-
   stroke(45, 123, 182);
   strokeWeight(3);
   line(0, -16, 0, 16);
-
   noStroke();
   fill(45, 123, 182);
   triangle(0, -18, -6, -10, 6, -10);
   pop();
   
   // Move in the wind's direction
-  position.add(wind);
-  
-  noStroke();
-  fill(0,0,temp);
+ position.add(wind);
+ //position.add(humidity);
+  stroke(0);
+  fill(51);
   ellipse(position.x, position.y, 16, 16);
-  noStroke();
-  fill(0,0,temp+100);
-  ellipse(position.x, position.y-10, 5, 5);
-  ellipse(position.x+8, position.y-6, 5, 5);
+  //ellipse(position.x, position.y, 16, 16);
 
   if (position.x > width)  position.x = 0;
   if (position.x < 0)      position.x = width;
   if (position.y > height) position.y = 0;
   if (position.y < 0)      position.y = height;
-
-
 }
 
-function gotWeather(weather) {
+function gotWeather(weather) { 
   
   // Get the angle (convert to radians)
   var angle = radians(Number(weather.wind.deg));
   // Get the wind speed
   var windmag = Number(weather.wind.speed);
-
-  humidity = Number(weather.main.humidity);
-
-  temp = Number(weather.main.temp);
   
   // Display as HTML elements
   var temperatureDiv = createDiv(floor(weather.main.temp) + '&deg;');
@@ -74,5 +68,5 @@ function gotWeather(weather) {
   
   // Make a vector
   wind = p5.Vector.fromAngle(angle);
-  console.log(weather);
+  console.log(wind);
 }
