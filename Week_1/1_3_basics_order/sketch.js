@@ -1,4 +1,4 @@
-//sketch from Getting Started in P5js
+//sketch from Getting Started in P5js Ex 3-10
 function setup() {
   createCanvas(480, 120);
 }

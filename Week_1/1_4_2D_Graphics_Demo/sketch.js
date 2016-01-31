@@ -1,4 +1,5 @@
-//sketch from creative coding course
+//sketch from creative coding with Monash Australia
+
 function setup() {
   createCanvas(600, 700);
   noLoop();

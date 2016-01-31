@@ -1,4 +1,4 @@
-// Sketch from Creative Coding Course
+// Sketch from Creative Coding
 function setup() {
   createCanvas(400, 350);
   background(0);

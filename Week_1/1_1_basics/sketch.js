@@ -1,4 +1,5 @@
-//sketch from Getting Started in P5js
+//sketch from Getting Started in P5js Ex 2-1
+
 function setup() {
   // put setup code here
 }

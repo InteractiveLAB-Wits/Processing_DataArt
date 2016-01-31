@@ -1,0 +1,12 @@
+//sketch from Getting Started in P5js Ex 4_6
+function setup() {
+  createCanvas(480, 120);
+  strokeWeight(8);
+}
+
+function draw() {
+  background(204);
+  for (var i = 20; i < 400; i += 60) {
+    line(i, 40, i + 60, 80);
+  }
+}

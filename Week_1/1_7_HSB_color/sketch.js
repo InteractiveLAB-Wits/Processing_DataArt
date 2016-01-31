@@ -1,4 +1,4 @@
-// Sketch from Creative Coding Course
+// Sketch from Creative Coding 
 function setup() {
   createCanvas(500, 500);
   ellipseMode(CENTER);
